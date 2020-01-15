@@ -14,3 +14,8 @@ git config --global user.name 'Your Name'
 ```git
 git config --global user.email "your_email@whatever.com"
 ```
+
+#### Просмотр всех конфигов:
+```git
+git config --list
+```

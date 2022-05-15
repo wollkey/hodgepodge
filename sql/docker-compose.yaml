@@ -1,0 +1,30 @@
+version: '3.9'
+
+volumes:
+  pg_data:
+  mysql_data:
+
+services:
+  teaching_pg:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: bulkins
+      POSTGRES_USER: bulkins
+      POSTGRES_PASSWORD: bulkins
+  teaching_mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: bulkins
+      MYSQL_DATABASE: bulkins
+      MYSQL_USER: bulkins
+      MYSQL_PASSWORD: bulkins
+    ports:
+      - "3309:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql

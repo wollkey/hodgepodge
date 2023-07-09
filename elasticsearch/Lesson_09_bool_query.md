@@ -10,12 +10,11 @@
 GET /recipes/_search
 {
   "query": {
-      "bool": {
-        "must": [],
-        "must_not": [],
-        "should": [],
-        "filter": []
-      }
+    "bool": {
+      "must": [],
+      "must_not": [],
+      "should": [],
+      "filter": []
     }
   }
 }
@@ -37,22 +36,21 @@ GET /recipes/_search
 GET /recipes/_search
 {
   "query": {
-      "bool": {
-        "must": [
-          {
-            "match": {
-              "ingredients.name": "parmesan"
-            }
-          },
-          {
-            "range": {
-              "preparation_time_minutes": {
-                "lte": 15
-              }
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "ingredients.name": "parmesan"
+          }
+        },
+        {
+          "range": {
+            "preparation_time_minutes": {
+              "lte": 15
             }
           }
-        ]
-      }
+        }
+      ]
     }
   }
 }

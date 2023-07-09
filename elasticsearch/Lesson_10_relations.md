@@ -12,20 +12,20 @@ Elasticsearch документ ориентированная система, к
 
 Для того чтобы запрашивать данные типа nested, необходимо использовать nested query:
 
-```json
+```http
 GET /recipes/_search
 {
   "query":{
     "nested": {
       "path": "ingredients",
-      "query" ...
+      "query" {}
     }
   }
 }
 ```
 
 Результаты вложенного объекта:
-```json
+```http
 GET /recipes/_search
 {
   "_source": false,
@@ -33,7 +33,7 @@ GET /recipes/_search
     "nested": {
       "path": "ingredients",
       "inner_hits": {},
-      "query" ...
+      "query" {}
     }
   }
 }
@@ -43,7 +43,7 @@ GET /recipes/_search
 
 Связь между родителем и потомком создаётся с помощью специального поля `join`
 
-```json
+```http
 PUT /users
 {
   "mappings": {
